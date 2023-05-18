@@ -33,7 +33,6 @@ const handleClickLoadMore = () => {
 
 const handleSizeChange = (size) => {
     limit.value = size
-    limit.value = 50
     offset.value = 1
     isPaginate.value = true
 }
@@ -41,7 +40,6 @@ const handleSizeChange = (size) => {
 const handleCurrentChange = (page) => {
     offset.value = page
     isPaginate.value = true
-    limit.value = 50
 }
 
 onMounted(() => {
