@@ -24,7 +24,7 @@ export const fetchPokemons = () => {
                     data.value = [...data.value, ...json.results]
                 }
                 if(params.offset !== 1 && params.isPaginate) {
-                    data.value = data.value = json.results
+                    data.value = json.results
                 }
 
             }).finally(() => {
