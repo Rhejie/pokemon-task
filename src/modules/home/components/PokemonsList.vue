@@ -29,6 +29,7 @@ const handleClickViewPokemon = (pokemonProfile) => {
 const handleClickLoadMore = () => {
     offset.value++
     limit.value = 15
+    isPaginate.value = false
 }
 
 const handleSizeChange = (size) => {
