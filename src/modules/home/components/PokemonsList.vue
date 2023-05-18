@@ -8,10 +8,9 @@ import { computed } from 'vue';
 
 const emit = defineEmits(['onClickViewProkemonProfile'])
 
-const { load, loading, data: pokemons, total, nextPage, previousPage } = fetchPokemons();
+const { load, loading, data: pokemons } = fetchPokemons();
 const limit = ref(50)
 const offset = ref(1)
-const firstLoadLimit = ref(50)
 const isPaginate = ref(false)
 const params = computed(() => {
     return {
@@ -29,10 +28,12 @@ const handleClickViewPokemon = (pokemonProfile) => {
 
 const handleClickLoadMore = () => {
     offset.value++
+    limit.value = 15
 }
 
 const handleSizeChange = (size) => {
     limit.value = size
+    limit.value = 50
     offset.value = 1
     isPaginate.value = true
 }
@@ -40,6 +41,7 @@ const handleSizeChange = (size) => {
 const handleCurrentChange = (page) => {
     offset.value = page
     isPaginate.value = true
+    limit.value = 50
 }
 
 onMounted(() => {
